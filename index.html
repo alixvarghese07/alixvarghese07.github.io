@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The personal portfolio of Alix Varghese.">
+<meta name="theme-color" content="#0b0d12">
+<title>Alix Varghese — Personal Portfolio</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{--bg:#0b0d12;--panel:#121720;--panel2:#171e29;--text:#f4f6f8;--muted:#a3adba;--line:#28313d;--accent:#b8f36b;--accent2:#d7ff9f;--max:1120px}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:85px}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.65}a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
+header{height:78px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(11,13,18,.9);backdrop-filter:blur(16px);z-index:20}
+.logo{font:700 22px 'Space Grotesk';letter-spacing:-1px}.logo b{color:var(--accent)}nav{display:flex;gap:27px}nav a{font-size:13px;color:var(--muted);transition:.2s}nav a:hover,nav a.active{color:var(--accent)}
+.nav-cta,.btn{display:inline-flex;align-items:center;gap:10px;border-radius:7px;padding:11px 17px;font-size:13px;font-weight:700;transition:.2s}.nav-cta,.btn.primary{background:var(--accent);color:#11170b}.nav-cta:hover,.btn.primary:hover{background:var(--accent2);transform:translateY(-2px)}
+.menu{display:none;background:none;border:1px solid var(--line);color:white;padding:8px 10px;border-radius:6px}
+.hero{min-height:650px;display:grid;grid-template-columns:1.12fr .88fr;align-items:center;gap:55px;padding-top:65px;padding-bottom:80px;position:relative}
+.kicker{color:var(--accent);font-size:11px;letter-spacing:2.3px;font-weight:700;text-transform:uppercase}.kicker:before{content:"";display:inline-block;width:23px;height:1px;background:var(--accent);vertical-align:middle;margin-right:10px}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif}h1{font-size:clamp(48px,7vw,83px);line-height:1.02;letter-spacing:-4px;margin:22px 0}.hero h1 span{color:var(--accent)}.role{font-size:20px;font-weight:600;margin-bottom:16px}.intro{color:var(--muted);font-size:16px;max-width:540px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.btn.secondary{border:1px solid var(--line);color:var(--text)}.btn.secondary:hover{border-color:var(--accent);color:var(--accent)}
+.social{display:flex;gap:10px;margin-top:35px}.social a{width:36px;height:36px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;font-size:11px;color:var(--muted);font-weight:700}.social a:hover{border-color:var(--accent);color:var(--accent)}
+.hero-art{height:390px;display:grid;place-items:center;position:relative;background:radial-gradient(ellipse,rgba(184,243,107,.12),transparent 62%)}.art-frame{width:280px;height:330px;border:1px solid #536b3b;border-radius:150px 150px 18px 18px;background:linear-gradient(145deg,#283b24,#111b18 65%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;box-shadow:0 25px 90px #0008}.art-frame:before,.art-frame:after{content:"";position:absolute;border:1px solid #b8f36b44;border-radius:50%;width:360px;height:150px;transform:rotate(-35deg)}.art-frame:after{transform:rotate(35deg);width:300px;height:190px}.monogram{font:700 150px 'Space Grotesk';color:var(--accent);text-shadow:0 0 50px #b8f36b66;z-index:1}.art-caption{position:absolute;bottom:25px;left:0;right:0;text-align:center;font-size:9px;letter-spacing:3px;color:#d5e9c1}
+.floating{position:absolute;background:#151d19;border:1px solid #465a39;padding:10px 14px;border-radius:8px;font-size:11px;color:#dce9d2}.float-a{top:55px;right:-5px}.float-b{bottom:48px;left:-8px}.green-dot{display:inline-block;width:7px;height:7px;background:var(--accent);border-radius:50%;margin-right:7px}
+section.block{padding:95px 0;border-top:1px solid var(--line)}.section-top{display:flex;justify-content:space-between;align-items:end;margin-bottom:38px}.number{color:var(--accent);font-size:10px;letter-spacing:2px;font-weight:700}.section-top h2{font-size:clamp(32px,4vw,48px);letter-spacing:-2px;margin-top:9px}.section-top h2 span{color:var(--accent)}.section-desc{color:var(--muted);max-width:440px;font-size:13px}
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px}.about-text p{color:var(--muted);margin-bottom:17px;font-size:15px}.about-text .big{font:500 23px/1.4 'Space Grotesk';color:var(--text)}.facts{display:grid;gap:12px}.fact{padding:19px;background:var(--panel);border:1px solid var(--line);border-radius:9px}.fact strong{display:block;font:600 15px 'Space Grotesk';margin-bottom:4px}.fact span{color:var(--muted);font-size:12px}
+.skills{display:flex;flex-wrap:wrap;gap:12px}.skill{padding:12px 17px;border:1px solid var(--line);background:var(--panel);border-radius:7px;font-size:13px;color:#dce3e9}.skill:hover{border-color:var(--accent);color:var(--accent)}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.project{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;transition:.25s}.project:hover{transform:translateY(-5px);border-color:#718e4d}.project-visual{height:155px;display:grid;place-items:center;font:600 42px 'Space Grotesk';color:var(--accent);background:radial-gradient(circle at 50% 50%,#3c542b,#17231b 70%)}.project:nth-child(2) .project-visual{background:radial-gradient(circle at 50% 50%,#354b5b,#17202a 70%);color:#9fd7ff}.project:nth-child(3) .project-visual{background:radial-gradient(circle at 50% 50%,#57422e,#211b17 70%);color:#ffca8b}.project-body{padding:20px}.project-body small{font-size:9px;color:var(--accent);letter-spacing:1.5px}.project-body h3{font-size:18px;margin:7px 0}.project-body p{color:var(--muted);font-size:12px;min-height:60px}.project-body em{display:inline-block;margin-top:13px;color:#d7e6c7;font-size:10px;font-style:normal}
+.education{padding:23px;border:1px solid var(--line);border-radius:9px;background:var(--panel);display:flex;align-items:center;gap:18px}.edu-icon{width:43px;height:43px;display:grid;place-items:center;background:#26351e;color:var(--accent);border-radius:8px;font-size:20px}.education h3{font-size:17px}.education p{font-size:12px;color:var(--muted)}.edu-note{margin-left:auto;color:var(--accent);font-size:10px;letter-spacing:1px}
+.contact{padding:70px 25px;text-align:center;border:1px solid #526b3b;border-radius:14px;background:radial-gradient(ellipse at top,rgba(184,243,107,.13),transparent 65%),var(--panel)}.contact h2{font-size:clamp(38px,6vw,64px);letter-spacing:-2px;margin:12px 0}.contact h2 span{color:var(--accent)}.contact p{color:var(--muted);max-width:500px;margin:0 auto 25px;font-size:14px}
+footer{padding:28px 0;display:flex;justify-content:space-between;gap:15px;align-items:center;color:var(--muted);font-size:11px}footer a:hover{color:var(--accent)}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s,transform .65s}.reveal.show{opacity:1;transform:none}
+@media(max-width:800px){.hero{grid-template-columns:1fr .8fr;gap:20px}.projects{grid-template-columns:1fr 1fr}.about-grid{gap:30px}nav{gap:14px}}
+@media(max-width:620px){.wrap{width:calc(100% - 34px)}header{height:68px}.menu{display:block}nav{display:none;position:absolute;top:67px;left:0;right:0;background:#10151c;border:1px solid var(--line);border-radius:8px;padding:12px;flex-direction:column;gap:0}nav.open{display:flex}nav a{padding:11px}.nav-cta{display:none}.hero{display:flex;flex-direction:column;align-items:stretch;padding-top:65px;gap:10px}.hero-art{height:330px}.art-frame{width:225px;height:270px}.monogram{font-size:120px}.float-a{right:0}.float-b{left:0}.section-top{display:block}.section-desc{margin-top:12px}.about-grid{grid-template-columns:1fr;gap:25px}.projects{grid-template-columns:1fr}.education{align-items:flex-start}.edu-note{display:none}section.block{padding:70px 0}footer{flex-direction:column;text-align:center}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none}*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <a class="logo" href="#home">A L I X<b></b></a>
+  <button class="menu" aria-label="Open menu" aria-expanded="false">☰</button>
+  <nav aria-label="Main navigation">
+    <a href="#home" class="active">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
+  </nav>
+  <a class="nav-cta" href="#contact">Let's connect ↗</a>
+</header>
+<main>
+<section class="hero wrap" id="home">
+  <div class="reveal">
+    <div class="kicker">PERSONAL PORTFOLIO</div>
+    <h1>Hi, I'm<br><span>Alix Varghese.</span></h1>
+    <div class="role">Student · Curious Mind · Future Creator</div>
+    <p class="intro">Welcome to my corner of the internet. I'm passionate about learning, exploring technology and turning interesting ideas into meaningful work. This is where I share my journey.</p>
+    <div class="actions"><a class="btn primary" href="#projects">Explore my work ↗</a><a class="btn secondary" href="#about">More about me</a></div>
+    <div class="social"><a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">GH</a><a href="https://www.linkedin.com/in/alix-varghese-66210536b/"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="LinkedIn">in</a><a href="mailto:your-email@example.com" aria-label="Email">✉</a></div>
+  </div>
+  <div class="hero-art reveal"><div class="art-frame"><div class="monogram">AV</div><div class="art-caption">LEARN · BUILD · EVOLVE</div></div><div class="floating float-a">✦ Always learning</div><div class="floating float-b"><i class="green-dot"></i> Open to new ideas</div></div>
+</section>
+
+<section class="block" id="about"><div class="wrap">
+  <div class="section-top reveal"><div><div class="number">01 / ABOUT ME</div><h2>A little about <span>me.</span></h2></div><p class="section-desc">A quick introduction to the person behind the projects.</p></div>
+  <div class="about-grid"><div class="about-text reveal"><p class="big">I believe every skill starts with curiosity, and every big achievement starts with a first step.</p><p>I'm Alix Varghese. I enjoy discovering how things work, learning new skills and challenging myself with fresh ideas.</p><p>I'm currently building my knowledge, exploring areas that interest me and looking for opportunities to grow through real experiences. This portfolio will keep evolving as I do.</p></div>
+  <div class="facts reveal"><div class="fact"><strong>Curious by nature</strong><span>I like asking questions and learning beyond the basics.</span></div><div class="fact"><strong>Focused on growth</strong><span>Every project is a chance to improve and try something new.</span></div><div class="fact"><strong>Open to collaboration</strong><span>Good ideas get better when people build together.</span></div></div></div>
+</div></section>
+
+<section class="block" id="skills"><div class="wrap">
+  <div class="section-top reveal"><div><div class="number">02 / SKILLS & INTERESTS</div><h2>What I'm <span>learning.</span></h2></div><p class="section-desc">A growing collection of skills and topics. Update these to match your actual experience.</p></div>
+  <div class="skills reveal"><span class="skill">HTML</span><span class="skill">CSS</span><span class="skill">JavaScript</span><span class="skill">Python</span><span class="skill">Problem Solving</span><span class="skill">Creative Thinking</span><span class="skill">Communication</span><span class="skill">Continuous Learning</span></div>
+</div></section>
+
+<section class="block" id="projects"><div class="wrap">
+  <div class="section-top reveal"><div><div class="number">03 / MY WORK</div><h2>Projects & <span>experiments.</span></h2></div><p class="section-desc">A place for the things I create, explore and learn from.</p></div>
+  <div class="projects">
+    <article class="project reveal"><div class="project-visual">01</div><div class="project-body"><small>PROJECT ONE</small><h3>Project title goes here</h3><p>Replace this with a short description of a project, what it does and what you learned while creating it.</p><em>ADD YOUR PROJECT LINK ↗</em></div></article>
+    <article class="project reveal"><div class="project-visual">02</div><div class="project-body"><small>PROJECT TWO</small><h3>Another idea</h3><p>Showcase an assignment, personal experiment, website or other work you are proud of.</p><em>ADD YOUR PROJECT LINK ↗</em></div></article>
+    <article class="project reveal"><div class="project-visual">03</div><div class="project-body"><small>PROJECT THREE</small><h3>What's next?</h3><p>Keep this space ready for your next build. Your portfolio can grow as you gain experience.</p><em>COMING SOON</em></div></article>
+  </div>
+</div></section>
+
+<section class="block" id="education"><div class="wrap">
+  <div class="section-top reveal"><div><div class="number">04 / EDUCATION</div><h2>My learning <span>journey.</span></h2></div></div>
+  <div class="education reveal"><div class="edu-icon">✦</div><div><h3>Add your qualification</h3><p>Add your course, institution, location and expected graduation year here.</p></div><div class="edu-note">EDUCATION</div></div>
+</div></section>
+
+<section class="wrap" id="contact" style="padding-top:35px;padding-bottom:80px">
+  <div class="contact reveal"><div class="number">05 / GET IN TOUCH</div><h2>Let's make something<br><span>meaningful.</span></h2><p>Have a question, an opportunity or just want to connect? I'd be happy to hear from you.</p><a class="btn primary" href="mailto:alixvarghese7@gmail.com">alixvarghese7@gmail.com ↗</a></div>
+</section>
+</main>
+<footer class="wrap"><a class="logo" href="#home">A L I X<b></b></a><span>© <span id="year"></span> Alix Varghese. All rights reserved.</span><a href="#home">BACK TO TOP ↑</a></footer>
+<script>
+const menuButton=document.querySelector('.menu');
+const nav=document.querySelector('nav');
+menuButton.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));menuButton.textContent=open?'✕':'☰';});
+document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuButton.setAttribute('aria-expanded','false');menuButton.textContent='☰';}));
+document.getElementById('year').textContent=new Date().getFullYear();
+const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show');revealObserver.unobserve(entry.target);}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+const navLinks=[...document.querySelectorAll('nav a')];
+const sectionObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)navLinks.forEach(link=>link.classList.toggle('active',link.getAttribute('href')==='#'+entry.target.id));}),{rootMargin:'-35% 0px -55% 0px'});
+document.querySelectorAll('main section[id]').forEach(section=>sectionObserver.observe(section));
+</script>
+</body>
+</html>
