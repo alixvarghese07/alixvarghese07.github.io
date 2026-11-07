@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrbanIQ | Smart Urban Intelligence</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #080d18;
+            color: white;
+            line-height: 1.6;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%;
+            border-bottom: 1px solid #1d2939;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
+            color: #65e6c1;
+        }
+
+        .nav-links a {
+            color: #b8c4d6;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: #65e6c1;
+        }
+
+        .hero {
+            min-height: 580px;
+            display: flex;
+            align-items: center;
+            padding: 80px 8%;
+            background:
+                linear-gradient(90deg, #080d18 35%, rgba(8,13,24,.65)),
+                url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=1600')
+                center/cover;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .tag {
+            color: #65e6c1;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(40px, 6vw, 68px);
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        h1 span {
+            color: #65e6c1;
+        }
+
+        .hero p {
+            color: #b8c4d6;
+            font-size: 17px;
+            max-width: 550px;
+            margin-bottom: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: #65e6c1;
+            color: #08131c;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 700;
+            transition: .3s;
+        }
+
+        .btn:hover {
+            background: #42cba5;
+            transform: translateY(-3px);
+        }
+
+        .section {
+            padding: 85px 8%;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .section-intro {
+            color: #a6b2c4;
+            max-width: 650px;
+            margin: 0 auto 50px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: #111b2b;
+            padding: 35px 25px;
+            border: 1px solid #243248;
+            border-radius: 12px;
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: #65e6c1;
+        }
+
+        .card .icon {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #a6b2c4;
+            font-size: 14px;
+        }
+
+        .about {
+            background: #101827;
+        }
+
+        footer {
+            padding: 30px 8%;
+            text-align: center;
+            color: #8190a5;
+            border-top: 1px solid #243248;
+            font-size: 13px;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links a {
+                margin: 0 8px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 70px 8%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">A L I X</div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="tag">GEOSPATIAL INTELLIGENCE & URBAN PLANNING</div>
+
+            <h1>
+                Building Smarter
+                <span>Cities</span>
+                Through Data.
+            </h1>
+
+            <p>
+                Transforming geographical data into meaningful insights.
+                Explore urban patterns, understand city infrastructure,
+                and discover smarter approaches to urban development.
+            </p>
+
+            <a href="#features" class="btn">Explore Our Platform →</a>
+        </div>
+    </section>
+
+    <section class="section" id="features">
+        <h2>Intelligence Behind Every City</h2>
+
+        <p class="section-intro">
+            Using geospatial intelligence and data-driven technologies
+            to understand and improve the cities of tomorrow.
+        </p>
+
+        <div class="features">
+
+            <div class="card">
+                <div class="icon">🌍</div>
+                <h3>Geospatial Analysis</h3>
+                <p>
+                    Discover geographical patterns and spatial
+                    relationships through data analysis.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">📊</div>
+                <h3>Urban Analytics</h3>
+                <p>
+                    Understand population distribution,
+                    infrastructure and urban development trends.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🏙️</div>
+                <h3>Smart Planning</h3>
+                <p>
+                    Support informed urban planning decisions
+                    through data-driven insights.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section about" id="about">
+        <h2>About UrbanIQ</h2>
+
+        <p class="section-intro">
+            UrbanIQ is a geospatial intelligence initiative focused
+            on connecting data, technology and urban development.
+            Our goal is to make complex geographical information
+            easier to understand and use.
+        </p>
+
+        <a href="#home" class="btn">Back to Top ↑</a>
+    </section>
+
+    <footer>
+        © 2026 UrbanIQ. All Rights Reserved.
+        <br>
+        Geospatial Intelligence for Smarter Cities.
+    </footer>
+
+</body>
+</html>
+```
